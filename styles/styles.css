@@ -5,11 +5,21 @@
 
   --clr-neutral-900: hsl(0, 6%, 24%);
 
-  --clr-gradient-200: Linear, 135deg, from hsl(0, 0%, 100%),
-    to hsl(0, 100%, 98%);
-  --clr-gradient-500: Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%);
+  --clr-gradient-200: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+  --clr-gradient-500: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%),
+    hsl(0, 74%, 74%)
+  );
 
   --ff-base: 'Josefin Sans', sans-serif;
+
+  --fs-500: 0.875rem;
+  --fs-900: 2.5rem;
 
   --fw-300: 300;
   --fw-400: 400;
@@ -80,8 +90,17 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+/*
+  9. Remove button styling
+*/
+button,
+input[type='submit'],
+input[type='reset'] {
+  all: unset;
+  cursor: pointer;
+}
 
-/* Utilities */
+/*----- Utilities -----*/
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
@@ -92,4 +111,91 @@ h6 {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.wrapper {
+  height: 100vh;
+}
+
+.page-grid {
+}
+
+/* ----- General styling ----- */
+body {
+  font-family: var(--ff-base);
+  color: var(--clr-primary-400);
+  font-size: var(--fs-500);
+}
+
+/* ----- Header ----- */
+.header {
+  padding: 2rem;
+}
+
+.header__logo {
+  width: 6.25rem;
+}
+
+/* ----- Content ----- */
+.content {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.content__title {
+  font-size: var(--fs-900);
+  color: var(--clr-neutral-900);
+  text-transform: uppercase;
+  line-height: 1.08;
+  letter-spacing: 0.75rem;
+}
+
+.content__highlight {
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-300);
+}
+
+.content__info {
+  margin-top: 0.75rem;
+  font-size: var(--fs-500);
+}
+
+.content__form {
+  position: relative;
+}
+
+.content__form-input {
+  margin-top: 2.3rem;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--clr-primary-400);
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.content__form-input:focus {
+  outline: 2px solid var(--clr-primary-500);
+}
+
+.content__form-input::placeholder {
+  color: var(--clr-primary-400);
+  font-size: var(--fs-500);
+}
+
+.content__form-btn {
+  position: absolute;
+  z-index: 2;
+  height: 47px;
+  width: 68px;
+  border-radius: 2rem;
+  background: var(--clr-gradient-500);
+  bottom: 0;
+  right: -1px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0px 8px 25px -8px var(--clr-primary-500);
+  transition: opacity 0.3s ease;
+}
+
+.content__form-btn:is(:hover, :focus-visible) {
+  opacity: 0.7;
 }

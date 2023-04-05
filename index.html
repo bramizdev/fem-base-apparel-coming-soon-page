@@ -30,13 +30,52 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <header></header>
-    <main>
-      We're coming soon Hello fellow shoppers! We're currently building our new
-      fashion store. Add your email below to stay up-to-date with announcements
-      and our launch deals. Email Address
-    </main>
-
+    <div class="wrapper page-grid">
+      <header class="header">
+        <a href="#">
+          <img
+            class="header__logo"
+            src="./images/logo.svg"
+            alt="Go to Base Apparel home page."
+          />
+        </a>
+      </header>
+      <picture class="hero">
+        <source media="(min-width:650px)" srcset="./images/hero-desktop.jpg" />
+        <img
+          src="./images/hero-mobile.jpg"
+          alt="A model wearing a pink shirt part of the latest Base Apparel collection."
+        />
+      </picture>
+      <main class="content">
+        <h1 class="visually-hidden">Base Apparel coming soon page</h1>
+        <h2 class="content__title">
+          <span class="content__highlight">We're</span> coming soon
+        </h2>
+        <p class="content__info">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form class="content__form">
+          <input
+            class="content__form-input"
+            type="email"
+            placeholder="Email Address"
+          />
+          <button class="content__form-btn" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20">
+              <path
+                fill="none"
+                stroke="#FFF"
+                stroke-width="2"
+                d="M1 1l8.836 8.836L1 18.671"
+              />
+            </svg>
+          </button>
+        </form>
+      </main>
+    </div>
     <footer>
       <p>
         Challenge by
