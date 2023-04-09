@@ -59,11 +59,22 @@
         </p>
         <form class="content__form">
           <input
+            id="email-input"
             class="content__form-input"
             type="email"
             placeholder="Email Address"
           />
-          <button class="content__form-btn" type="submit">
+          <img
+            id="alert-icon"
+            class="content__form-icon-alert hidden"
+            src="./images/icon-error.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <p id="alert-text" class="content__form-alert hidden">
+            Please provide a valid email
+          </p>
+          <button class="content__form-btn" type="submit" id="submit-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20">
               <path
                 fill="none"

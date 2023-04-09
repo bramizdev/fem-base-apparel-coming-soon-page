@@ -18,6 +18,7 @@
 
   --ff-base: 'Josefin Sans', sans-serif;
 
+  --fs-400: 0.8125rem;
   --fs-500: 0.875rem;
   --fs-900: 2.5rem;
 
@@ -120,6 +121,10 @@ input[type='reset'] {
   border-width: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 .wrapper {
   height: 100vh;
   max-width: 23.4375rem;
@@ -166,7 +171,7 @@ footer a:is(:focus, :hover) {
   opacity: 0.8;
 }
 
-footer a:focus-visible {
+footer a :focus-visible {
   outline: 2px solid black;
   outline-offset: 2px;
 }
@@ -299,7 +304,7 @@ footer a:focus-visible {
   width: 68px;
   border-radius: 2rem;
   background: var(--clr-gradient-500);
-  bottom: 0;
+  top: 0;
   right: -1px;
   display: grid;
   place-items: center;
@@ -321,4 +326,26 @@ footer a:focus-visible {
 .content__form-btn:focus-visible {
   outline: 2px solid black;
   outline-offset: 2px;
+}
+
+.content__form-alert {
+  padding: 0.5rem 2rem;
+  text-align: left;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-400);
+  color: var(--clr-primary-500);
+}
+
+.content__form-icon-alert {
+  position: absolute;
+  top: 0;
+  right: 68px;
+  padding: 0.75rem;
+}
+
+@media (min-width: 50rem) {
+  .content__form-icon-alert {
+    right: 100px;
+    padding: 1rem;
+  }
 }
